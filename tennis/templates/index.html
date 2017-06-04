@@ -1,0 +1,37 @@
+{% load tennis %}
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>index</title>
+    <body>
+            <table border="0" cellspacing="5" cellpadding="5">
+                <tr><th>speler</th><th>games</th><th>punten per game</th><th>score</th><th>punten</th></tr>
+                {% for speler in spelers %}
+                <tr><td>{{speler.naam}}</td><td>{{speler.matches}}</td><td>{{speler.punten_per_game}}</td><td>{{speler.score}}</td><td>{{speler.punten}}</td></tr>
+                {% endfor %}
+            </table>
+        {# <table border="0" cellspacing="5" cellpadding="5"> #}
+        {# {% for speler in spelers %} #}
+        {#     {% if forloop.first %} #}
+        {#     <tr> #}
+        {#     {% for teamgenoot in spelers %} #}
+        {#         <th>Header</th> #}
+        {#     {% endfor %} #}
+        {#     </tr> #}
+        {#     {% endif %} #}
+        {#     <tr> #}
+        {#     {% for teamgenoot in spelers %} #}
+        {#         {% if speler|is_match:teamgenoot %} #}
+        {#         <td></td> #}
+        {#         {% endif %} #}
+        {#     {% endfor %} #}
+        {#     </tr> #}
+        {# {% endfor %} #}
+        {# </table> #}
+        {# <form action="" method="post" accept-charset="utf-8"> #}
+        {#     <label for="naam">naam</label><input type="text" name="naam" value=""> #}
+        {#     <label for="speelsterkte">speelsterkte</label><input type="text" name="speelsterkte" value=""> #}
+        {#     <p><input type="submit" value="Continue &rarr;"></p> #}
+        {# </form> #}
+    </body>
+</head>
